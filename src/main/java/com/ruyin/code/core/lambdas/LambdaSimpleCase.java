@@ -2,6 +2,7 @@ package com.ruyin.code.core.lambdas;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 
 public class LambdaSimpleCase {
@@ -41,9 +42,14 @@ public class LambdaSimpleCase {
         names.stream().filter((name)->(condition.test(name))).forEach(System.out::println);
     }
 
+
     public static void main(String[] args) {
         //impRunnable();
         //impListRecursivly();
-        impListFilter();
+        //impListFilter();
+
+        BinaryOperator<Long> add = (x, y)-> x + y;
+        BinaryOperator<Long> multi = (x,y)-> x * y;
+        System.out.println(add);
     }
 }
