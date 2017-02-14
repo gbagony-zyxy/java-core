@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ruyin.code.basic.string</groupId>
-    <artifactId>pattren-match</artifactId>
+    <artifactId>java-core</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>pattren-match</name>
+    <name>java-core</name>
     <url>http://maven.apache.org</url>
 
     <properties>
