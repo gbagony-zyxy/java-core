@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 
 /**
- * Created by gbagony on 2016/12/23.
+ * Created by ruyin on 2016/12/23.
  */
 public class SimpleData {
     public static final Artist johnColtrane = new Artist("John Coltrane", "US");

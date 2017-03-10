@@ -1,7 +1,7 @@
 package com.ruyin.code.core.lambdas.music;
 
 /**
- * Created by gbagony on 2016/12/23.
+ * Created by ruyin on 2016/12/23.
  */
 public final class Track {
 

@@ -46,4 +46,11 @@ public class SelfRefrence {
 
         StringOperate.replaceBlank("we are happy!");
     }
+
+    @Test
+    public void testHex(){
+        int a = 0xA0;  //160
+        int b = 0x140; //320
+        System.out.println(a & b);
+    }
 }
