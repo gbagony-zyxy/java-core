@@ -1,9 +1,9 @@
-package com.ruyin.code.refrence;
+package com.ruyin.code.reference;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by gbagony on 2017/2/13.
+ * Created by ruyin on 2017/2/13.
  */
 public class User {
     private String name;

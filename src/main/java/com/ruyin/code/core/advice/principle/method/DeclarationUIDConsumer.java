@@ -1,7 +1,7 @@
 package com.ruyin.code.core.advice.principle.method;
 
 /**
- * Created by gbagony on 2016/12/21.
+ * Created by ruyin on 2016/12/21.
  */
 public class DeclarationUIDConsumer {
     public static void main(String[] args) {

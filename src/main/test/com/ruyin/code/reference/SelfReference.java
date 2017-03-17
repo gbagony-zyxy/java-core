@@ -1,5 +1,6 @@
-package com.ruyin.code.refrence;
+package com.ruyin.code.reference;
 
+import com.ruyin.code.core.lambdas.compatible.method.*;
 import com.ruyin.code.interview.title.FirstNotRepeatingChar;
 import com.ruyin.code.interview.title.StringOperate;
 import com.ruyin.code.interview.title.TwoDimensinalArrayOperate;
@@ -10,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by gbagony on 2017/2/13.
  */
-public class SelfRefrence {
+public class SelfReference {
 
     @Test
     public void test(){
@@ -52,5 +53,26 @@ public class SelfRefrence {
         int a = 0xA0;  //160
         int b = 0x140; //320
         System.out.println(a & b);
+    }
+
+    //java 8 中默认方法的细节
+    @Test
+    public void testDefaultOverride(){
+        Parent parent = new ParentImp();
+        parent.welcome();
+        System.out.println(parent.getLastMessage());
+
+        Child child = new ChildImp();
+        child.welcome();
+        System.out.println(child.getLastMessage());
+
+        Parent override = new OverridingParent();
+        override.welcome();
+        System.out.println(override.getLastMessage());
+
+        //与接口中定义的默认方法相比，类中重写的方法更具体
+        Child child1 = new OverridingChild();
+        child1.welcome();
+        System.out.println(child1.getLastMessage());
     }
 }
