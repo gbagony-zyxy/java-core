@@ -6,7 +6,9 @@ import com.ruyin.code.interview.title.StringOperate;
 import com.ruyin.code.interview.title.TwoDimensinalArrayOperate;
 import org.junit.Test;
 
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * Created by gbagony on 2017/2/13.
@@ -74,5 +76,77 @@ public class SelfReference {
         Child child1 = new OverridingChild();
         child1.welcome();
         System.out.println(child1.getLastMessage());
+    }
+
+
+    @Test
+    public void testOptional(){
+        Optional<String> optional = Optional.of("a");
+        System.out.println(optional.get());
+
+        Optional emptyOptional = optional.empty();
+        Optional alsoEmpty = Optional.ofNullable("a");
+
+        System.out.println(emptyOptional);
+        System.out.println(alsoEmpty);
+
+        System.out.println(emptyOptional.isPresent());
+        System.out.println(emptyOptional.orElse("b"));
+        System.out.println(emptyOptional.orElseGet(() -> "c"));
+    }
+
+
+    @Test()
+    public void testElementOrder(){
+        List<Integer> numbers = Arrays.asList(1,2,3,4);
+
+        List<Integer> sameOrder = numbers.stream().collect(Collectors.toList());
+
+        System.out.println(numbers);
+        System.out.println(sameOrder);
+
+        Map map = new HashMap();
+        map.put(null,"gg");
+        //map.put(null,null);
+        Object list = map.keySet().stream().map(key -> key).collect(Collectors.toList());
+        System.out.println(list);
+        System.out.println(map.get(null));
+
+        User user = new User("ruyin","ruyin@gmail.com","13396542145",24);
+
+        ClassLoader userLoader = user.getClass().getClassLoader();
+
+        System.out.println(userLoader);
+
+
+        System.out.println(System.getProperty("sun.boot.class.path"));
+        System.out.println(System.getProperty("java.ext.dirs"));
+    }
+
+    @Test(expected = java.lang.ArithmeticException.class)
+    public void testExpected(){
+        System.out.println(1 / 0);
+    }
+
+    @Test
+    public void testStr(){
+        String str1 = "abc";
+        String str2 = "abc";
+
+        String str3 = new String("abc");
+
+        System.out.println(str1 == str2);
+
+        str1 = "def";
+        //String类型定义的值行为与基本类型字面值行为类似，
+        System.out.println(str1 + "," + str2);
+        System.out.println(str1 == str2);
+        System.out.println(str1 == str3);
+    }
+
+    @Test
+    public void testMap(){
+        //保证线程安全
+        Map map = Collections.synchronizedMap(new HashMap<>());
     }
 }

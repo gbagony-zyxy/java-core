@@ -1,0 +1,18 @@
+Chapter 5:高级集合类和收集器
+
+1、方法引用
+标准语法为Classname::methodName。此虽是一个方法,但不需要在后面加括号,因为此处并不调用该方法。
+该处只是提供了和Lambda表达式等价的一种结构,在需要时才会调用。凡是使用Lambda表达式的地方,就可以使用方法引用。
+
+构造方法也有同样的缩写形式,该种形式(name,nationality) -> new Artist(name,nationality)使用方法引用写成Artist::new。
+创建数组的引用形式：String[]::new。
+
+
+2、元素顺序
+在一个有序集合中创建一个流时,流中的元素就按出现顺序排列。
+如果集合本身就是无序的,由此生成的流也是无序的。
+forEach方法不能保证元素是按顺序处理的,如果需要保证按顺序处理,应该使用forEachOrdered方法,it's your friend。
+
+
+3、使用收集器
+java.util.stream.Collrctors
