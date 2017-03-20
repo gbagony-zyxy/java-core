@@ -15,4 +15,16 @@ forEach方法不能保证元素是按顺序处理的,如果需要保证按顺序
 
 
 3、使用收集器
-java.util.stream.Collrctors
+java.util.stream.Collrctors:toList/toSet/toCollection
+
+流上的链式操作转换成其它集合：
+指定具体的集合：stream.collect(toCollection(TreeSet::new))
+(1)、已有代码是为集合编写的，因此需要将流转换成集合传入。
+(2)、在集合上进行一系列链式操作后，最终希望生成一个值。
+(3)、写单元测试时，需要对某个具体的集合做断言。
+
+转换成值：利用收集器让流生成一个值
+
+数据分块：将流操作分解为两个集合，可以使用多次的过滤操作：partitioningBy
+
+数据分组：
