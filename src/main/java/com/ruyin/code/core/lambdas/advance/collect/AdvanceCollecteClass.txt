@@ -25,6 +25,16 @@ java.util.stream.Collrctors:toList/toSet/toCollection
 
 转换成值：利用收集器让流生成一个值
 
-数据分块：将流操作分解为两个集合，可以使用多次的过滤操作：partitioningBy
+数据分块：将流操作分解为{两}个集合，可以使用多次的过滤操作：partitioningBy
 
-数据分组：
+数据分组：数据分组是一种更自然的分割数据操作,与将数据分成true和false两部分不同,可以使用任意值对数据进行分组。
+
+字符串：可以通过Collectors.joining()方法实现字符串的拼接操作
+
+组合收集器：groupingBy先将元素分块,每块都与分类函数getMainMusician提供的键值相对应,然后使用下游的另一个收集器收集每块中的元素,
+    最后将结果映射成一个Map.
+    收集器是生成最终结果的一剂配方,下游收集器则是生成部分结果的配方,主收集器中会用到下游收集器。
+
+重构和定制收集器：实现Collector接口,类库提供的实现StringJoiner
+
+对收集器的归一化处理：-+

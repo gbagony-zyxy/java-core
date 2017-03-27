@@ -1,3 +1,12 @@
+I、要想一个类可以被clone,必须注意的点：
+    1、必须实现Cloneable接口，否则会抛出CloneNotSupportedException异常
+    2、必须提供public的clone方法,即重写Object.clone()方法,否则无法编译通过
+    3、对于存在可变域的类,在clone方法中要对这些可变域进行拷贝
+II、创建不可变类：
+    1、所有成员都是private
+    2、不提供对成员的改变方法
+    3、确保所有的方法不会被重载,第一使用final class,第二使用final method
+    4、如果某一个类成员不是基本类型变量(对应的包装类型)或者不可变类,必须通过在成员初始化(in)或者get方法(out)时通过深度clone方法来确保类的不可变
 
 
 集合处理:(自反性、传递性、对称性)
